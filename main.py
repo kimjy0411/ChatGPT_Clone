@@ -4,13 +4,17 @@ from langchain_core.messages import ChatMessage
 from langchain_openai import ChatOpenAI
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 import os
+from dotenv import load_dotenv
+
 
 
 st.set_page_config(page_title="ChatGPT", page_icon=" ")
 st.title("ChatGPT")
 
 #api key 설정
-os.environ["OPENAI_API_KEY"] = st.secrets["OPENAI_API_KEY"]
+#os.environ["OPENAI_API_KEY"] = st.secrets["OPENAI_API_KEY"]
+load_dotenv()
+
 
 if "messages" not in st.session_state:
     st.session_state["messages"] = []
